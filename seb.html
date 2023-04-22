@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Velkommen</title>
+    <style>
+      /* Centrerer teksten */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="welcome-text">Velkommen</h1>
+    <button onclick="changeText()">Klik her</button>
+
+    <script>
+      function changeText() {
+        document.getElementById("welcome-text").innerHTML = "Du er sød mor";
+      }
+    </script>
+  </body>
+</html>
