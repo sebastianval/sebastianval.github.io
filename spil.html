@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Velkommen til hjemmesiden</title>
+</head>
+<body>
+	<h1>Velkommen til hjemmesiden</h1>
+	<p>Tryk for at starte</p>
+	<button onclick="checkAnswer()">Start</button>
+	<div id="question" style="display:none;">
+		<h2>Hvad er 50+10?</h2>
+		<input type="text" id="answer">
+		<button onclick="checkAnswer()">Svar</button>
+	</div>
+	<div id="result" style="display:none;"></div>
+	<script>
+		function checkAnswer() {
+			var answer = document.getElementById("answer").value;
+			if (answer == "60") {
+				document.getElementById("result").innerHTML = "<h2>Grøn skærm</h2><p>Tak for spillet!</p>";
+				document.getElementById("result").style.display = "block";
+				document.getElementById("question").style.display = "none";
+			} else {
+				alert("Forkert svar, prøv igen!");
+			}
+		}
+	</script>
+</body>
+</html>
