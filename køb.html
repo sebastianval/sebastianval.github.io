@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Køb Felix</title>
+	<style>
+		/* Style for buttons */
+		.button {
+		  font-size: 24px;
+		  padding: 10px 20px;
+		  border-radius: 5px;
+		  background-color: #4CAF50;
+		  color: white;
+		  border: none;
+		}
+		
+		/* Style for sold out message */
+		.sold-out {
+			font-size: 24px;
+			font-weight: bold;
+			color: red;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Køb Felix</h1>
+	
+	<!-- Buy Felix button -->
+	<button id="felix-btn" class="button" onclick="buyFelix()">Køb Felix</button>
+	
+	<!-- Sold out message for Felix -->
+	<p id="felix-sold-out" class="sold-out" style="display:none;">Solgt</p>
+	
+	<!-- Buy USA Free button -->
+	<button id="usa-btn" class="button" onclick="buyUSA()">Køb USA Gratis</button>
+	
+	<!-- Sold out message for USA -->
+	<p id="usa-sold-out" class="sold-out" style="display:none;">Solgt</p>
+	
+	<!-- Back button -->
+	<button id="back-btn" class="button" style="display:none;" onclick="goBack()">Tilbage</button>
+	
+	<script>
+		function buyFelix() {
+			document.getElementById("felix-btn").style.display = "none"; // Hide Felix button
+			document.getElementById("felix-sold-out").style.display = "block"; // Show sold out message for Felix
+			document.getElementById("usa-btn").style.display = "none"; // Hide USA button
+			document.getElementById("usa-sold-out").style.display = "block"; // Show sold out message for USA
+			document.getElementById("back-btn").style.display = "block"; // Show back button
+		}
+		
+		function buyUSA() {
+			document.getElementById("usa-btn").style.display = "none"; // Hide USA button
+			document.getElementById("usa-sold-out").style.display = "block"; // Show sold out message for USA
+			document.getElementById("back-btn").style.display = "block"; // Show back button
+		}
+		
+		function goBack() {
+			document.getElementById("felix-btn").style.display = "block"; // Show Felix button
+			document.getElementById("felix-sold-out").style.display = "none"; // Hide sold out message for Felix
+			document.getElementById("usa-btn").style.display = "block"; // Show USA button
+			document.getElementById("usa-sold-out").style.display = "none"; // Hide sold out message for USA
+			document.getElementById("back-btn").style.display = "none"; // Hide back button
+		}
+	</script>
+</body>
+</html>
