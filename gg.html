@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eksempel</title>
+	<style>
+		#balance {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 10px;
+			background-color: #ddd;
+			font-weight: bold;
+		}
+		#computer {
+			display: block;
+			margin: 0 auto;
+			width: 300px;
+			height: 200px;
+			background-image: url("computer.jpg");
+			background-size: cover;
+		}
+		#computer:hover {
+			cursor: pointer;
+		}
+		#house {
+			display: block;
+			margin: 20px auto;
+			width: 200px;
+			height: 150px;
+			background-image: url("house.jpg");
+			background-size: cover;
+		}
+		#house:hover {
+			cursor: pointer;
+		}
+		#button {
+			display: block;
+			margin: 20px auto;
+			padding: 10px;
+			background-color: #4CAF50;
+			color: #fff;
+			text-align: center;
+			width: 150px;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="balance">$1000</div>
+	<div id="computer" onclick="reduceBalance(200)"></div>
+	<div>$200</div>
+	<div id="house" onclick="reduceBalance(500)"></div>
+	<div>$500</div>
+	<button id="button" onclick="increaseBalance()">Tryk</button>
+	<script>
+		let balance = 1000;
+		function reduceBalance(amount) {
+			balance -= amount;
+			document.getElementById("balance").innerHTML = "$" + balance;
+		}
+		function increaseBalance() {
+			let count = 0;
+			let interval = setInterval(function() {
+				count++;
+				if (count > 500) {
+					clearInterval(interval);
+					balance += 400;
+					document.getElementById("balance").innerHTML = "$" + balance;
+				}
+			}, 10);
+		}
+	</script>
+</body>
+</html>
