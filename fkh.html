@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Min knap-app</title>
+    <style>
+      #main-btn {
+        display: block;
+        margin: 0 auto;
+        font-size: 24px;
+        padding: 20px;
+      }
+
+      #click-btn {
+        display: block;
+        margin: 0 auto;
+        font-size: 24px;
+        padding: 20px;
+      }
+
+      #counter {
+        display: block;
+        margin: 0 auto;
+        font-size: 48px;
+        text-align: center;
+      }
+
+      #touch-grass {
+        display: block;
+        margin: 0 auto;
+        font-size: 24px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align:center;">Velkommen</h1>
+    <button id="main-btn" onclick="showCounter()">Start</button>
+    <div id="counter" style="display:none;"></div>
+    <button id="click-btn" onclick="incrementCounter()" style="display:none;">Klik</button>
+    <button id="touch-grass" onclick="resetApp()" style="display:none;">Touch Grass</button>
+    <script>
+      let count = 0;
+
+      function showCounter() {
+        document.getElementById("main-btn").style.display = "none";
+        document.getElementById("click-btn").style.display = "block";
+        document.getElementById("counter").style.display = "block";
+        updateCounter();
+      }
+
+      function updateCounter() {
+        document.getElementById("counter").innerHTML = count;
+        if (count < 1500) {
+          setTimeout(updateCounter, 10);
+        } else {
+          document.getElementById("click-btn").style.display = "none";
+          document.getElementById("touch-grass").style.display = "block";
+        }
+      }
+
