@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tryk på knappen og vind penge!</title>
+	<style>
+		#money {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 24px;
+		}
+	</style>
+	<script>
+		var money = 0;
+
+		function addMoney() {
+			money += 1;
+			document.getElementById("money").textContent = "Du har " + money + " kr.";
+		}
+
+		function buyFelix() {
+			if (money >= 100) {
+				money -= 100;
+				document.getElementById("money").textContent = "Du har " + money + " kr.";
+				alert("Du har købt Felix for 100 kr.");
+			} else {
+				alert("Du har ikke råd til Felix!");
+			}
+		}
+
+		function buyVallenbaek() {
+			if (money >= 1000) {
+				money -= 1000;
+				document.getElementById("money").textContent = "Du har " + money + " kr.";
+				alert("Du har købt Vallenbæk for 1000 kr.");
+			} else {
+				alert("Du har ikke råd til Vallenbæk!");
+			}
+		}
+
+		function buySebastian() {
+			if (money >= 500000) {
+				money -= 500000;
+				document.getElementById("money").textContent = "Du har " + money + " kr.";
+				alert("Du har købt Sebastian for 500000 kr. og mistet alle dine penge!");
+			} else {
+				alert("Du har ikke råd til Sebastian!");
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Tryk på knappen og vind penge!</h1>
+	<button onclick="addMoney()">Tryk her og vind 1 krone!</button>
+	<div id="money">Du har 0 kr.</div>
+	<p>
+		<button onclick="buyFelix()">Køb Felix for 100 kr.</button>
+		<button onclick="buyVallenbaek()">Køb Vallenbæk for 1000 kr.</button>
+		<button onclick="buySebastian()">Køb Sebastian for 500000 kr.</button>
+	</p>
+</body>
+</html>
