@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rød knap</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      #flag {
+        float: left;
+      }
+      #red-button {
+        background-color: red;
+        color: white;
+        font-size: 24px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        margin: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="flag" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/1280px-Flag_of_Denmark.svg.png" alt="Danish flag">
+    <h1>Rød knap</h1>
+    <button id="red-button" onclick="document.body.style.backgroundColor = 'red'; setTimeout(function() {window.location.href = window.location.origin;}, 20000);">Tryk her</button>
+  </body>
+</html>
