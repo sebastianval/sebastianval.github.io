@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Op til 1000</title>
+	<style>
+		#counter {
+			font-size: 3em;
+			text-align: center;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		#button {
+			display: block;
+			margin: 0 auto;
+			padding: 20px 50px;
+			background-color: green;
+			color: white;
+			font-size: 2em;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1 style="text-align: center;">Klik op til 1000</h1>
+	<div id="counter">0</div>
+	<button id="button" onclick="count()">Klik her</button>
+	<script>
+		function count() {
+			var counter = document.getElementById("counter");
+			var count = parseInt(counter.innerHTML);
+			if (count < 1000) {
+				counter.innerHTML = count + 1;
+			} else {
+				alert("Seb er sej");
+			}
+		}
+	</script>
+</body>
+</html>
