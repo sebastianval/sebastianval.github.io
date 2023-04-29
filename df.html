@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flag app</title>
+	<style>
+		/* Centrerer knappen */
+		.button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		.button {
+			background-color: blue;
+			color: white;
+			border: none;
+			padding: 20px 40px;
+			font-size: 24px;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="button-container">
+		<button class="button" onclick="showFlag()">Tryk på den blå</button>
+	</div>
+
+	<div id="flag-container" style="display: none; justify-content: center; align-items: center; height: 100vh; background-color: white;">
+		<img src="https://cdn.pixabay.com/photo/2012/04/12/21/49/denmark-30963_960_720.png" alt="Danish flag" width="300">
+	</div>
+
+	<script>
+		function showFlag() {
+			// Viser flag-container
+			document.getElementById("flag-container").style.display = "flex";
+
+			// Gemmer knappen
+			document.querySelector(".button-container").style.display = "none";
+
+			// Efter 10 sekunder skjules flag-container og knappen vises igen
+			setTimeout(function() {
+				document.getElementById("flag-container").style.display = "none";
+				document.querySelector(".button-container").style.display = "flex";
+			}, 10000);
+		}
+	</script>
+
+</body>
+</html>
