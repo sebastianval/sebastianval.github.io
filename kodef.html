@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Velkommen til Kode</title>
+    <style>
+      /* Centrerer knappen */
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      /* Farve og størrelse på knappen */
+      .start-knap {
+        background-color: red;
+        color: white;
+        font-size: 24px;
+        padding: 20px 40px;
+        border-radius: 5px;
+      }
+      /* Farve og størrelse på tilbage-knappen */
+      .tilbage-knap {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: green;
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <button class="start-knap" onclick="visSogefelt()">Start</button>
+      <div id="sogefelt" style="display: none;">
+        <input type="text" placeholder="Indtast dit spørgsmål her" />
+        <button onclick="sog()">Søg</button>
+      </div>
+    </div>
+    <button class="tilbage-knap" onclick="gaaTilbage()">Tilbage</button>
+    <script>
+      function visSogefelt() {
+        document.getElementById("sogefelt").style.display = "block";
+      }
+      function sog() {
+        //Skriv din kode til at besvare spørgsmål her
+      }
+      function gaaTilbage() {
+        history.back();
+      }
+    </script>
+  </body>
+</html>
