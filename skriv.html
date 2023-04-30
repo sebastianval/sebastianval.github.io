@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Min side</title>
+	<style>
+		.center {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		.blue-button {
+			background-color: blue;
+			color: white;
+			font-size: 24px;
+			padding: 20px;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+		.red-button {
+			background-color: red;
+			color: white;
+			font-size: 18px;
+			padding: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-right: 10px;
+		}
+		.back-button {
+			position: fixed;
+			bottom: 10px;
+			right: 10px;
+			background-color: grey;
+			color: white;
+			font-size: 14px;
+			padding: 5px 10px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.chat-container {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: white;
+			border-radius: 10px;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			z-index: 1;
+		}
+		.chat-input {
+			width: 100%;
+			margin-bottom: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			font-size: 14px;
+		}
+	</style>
+</head>
+<body>
+	<div class="center">
+		<div class="blue-button" onclick="showBlueScreen()">Klik her</div>
+		<div>
+			<button class="red-button" onclick="showChat()">Chat</button>
+			<button class="back-button" onclick="goBack()">Back</button>
+		</div>
+	</div>
+
+	<div class="chat-container" id="chat-container">
+		<input type="text" placeholder="Skriv din besked her" class="chat-input">
+		<button onclick="hideChat()">Luk</button>
+	</div>
+
+	<script>
+		function showBlueScreen() {
+			document.body.style.backgroundColor = "blue";
+			setTimeout(function() {
+				document.body.style.backgroundColor = "";
+			}, 10000);
+		}
+
+		function showChat() {
+			document.getElementById("chat-container").style.display = "block";
+		}
+
+		function hideChat() {
+			document.getElementById("chat-container").style.display = "none";
+		}
+
+		function goBack() {
+			window.history.back();
+		}
+	</script>
+</body>
+</html>
