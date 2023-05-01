@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Monster Hunter Spil</title>
+	<style>
+		#start-knap {
+			background-color: green;
+			font-size: 30px;
+			padding: 20px 40px;
+			color: white;
+			border-radius: 10px;
+			cursor: pointer;
+		}
+		#bane {
+			background-color: grey;
+			height: 500px;
+			width: 1000px;
+			position: relative;
+		}
+		#monster {
+			background-color: red;
+			height: 50px;
+			width: 50px;
+			position: absolute;
+			top: 200px;
+			left: 300px;
+			border-radius: 50%;
+		}
+		#våben {
+			background-color: black;
+			height: 20px;
+			width: 50px;
+			position: absolute;
+			top: 450px;
+			left: 450px;
+			transform: rotate(45deg);
+		}
+		#liv {
+			color: red;
+			font-size: 20px;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="start-knap" onclick="startSpil()">Start Spil</div>
+	<div id="bane" style="display: none;"></div>
+	<div id="liv">Liv: 3</div>
+	<script>
+		function startSpil() {
+			document.getElementById('start-knap').style.display = 'none';
+			document.getElementById('bane').style.display = 'block';
+		}
+	</script>
+	<script>
+		let liv = 3;
+		document.addEventListener('keydown', function(event) {
+			if (event.code === 'Space') {
+				let våben = document.getElementById('våben');
+				let monster = document.getElementById('monster');
+				if (overlap(våben, monster)) {
+					monster.style.display = 'none';
+				} else {
+					liv--;
+					if (liv === 0) {
+						alert('Game Over!');
+					} else {
+						document.getElementById('liv').innerHTML = 'Liv: ' + liv;
+					}
+				}
+			}
+		});
+
+		function overlap(a, b) {
+			let aRect = a.getBoundingClientRect();
+			let bRect = b.getBoundingClientRect();
+			return !(
+				(aRect.bottom < bRect.top) || 
+				(aRect.top > bRect.bottom) || 
+				(aRect.right < bRect.left) || 
+				(aRect.left > bRect.right)
+			);
+		}
+	</script>
+</body>
+</html>
