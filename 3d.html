@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3D Print Model</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+
+		.button {
+			background-color: green;
+			border: none;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 24px;
+			margin: 10px;
+			cursor: pointer;
+		}
+
+		.back {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 18px;
+			cursor: pointer;
+		}
+
+		.model-button {
+			background-color: #008CBA;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 18px;
+			margin: 10px;
+			cursor: pointer;
+		}
+
+		.model-container {
+			display: none;
+			text-align: center;
+		}
+
+		.model {
+			width: 200px;
+			height: 200px;
+			background-color: #ccc;
+			margin: 20px auto;
+			border-radius: 50%;
+		}
+
+		.active {
+			display: block;
+		}
+
+		.yellow-screen {
+			display: none;
+			background-color: yellow;
+			height: 500px;
+			margin-top: 50px;
+			font-size: 36px;
+			font-weight: bold;
+			padding-top: 100px;
+		}
+
+		.show-yellow {
+			display: none;
+		}
+
+		.show-yellow .yellow-screen {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<button class="button" onclick="showModel()">Start</button>
+
+	<div class="model-container">
+		<button class="back" onclick="hideModel()">Back</button>
+		<button class="model-button" onclick="show3DModels()">3D Print Model</button>
+
+		<div class="model show-yellow">
+			<span>Hehe</span>
+		</div>
+
+		<div class="model">
+			<!-- Her kan du indsætte 3D-modeller -->
+		</div>
+
+	</div>
+
+	<div class="yellow-screen">
+		<span>Hehe</span>
+	</div>
+
+	<script>
+		function showModel() {
+			document.querySelector('.model-container').style.display = "block";
+		}
+
+		function hideModel() {
+			document.querySelector('.model-container').style.display = "none";
+		}
+
+		function show3DModels() {
+			document.querySelector('.model').classList.add('active');
+			document.querySelector('.show-yellow').classList.remove('active');
+		}
+
+		function showYellowScreen() {
+			document.querySelector('.show-yellow').classList.add('active');
+			document.querySelector('.model').classList.remove('active');
+		}
+	</script>
+
+</body>
+</html>
