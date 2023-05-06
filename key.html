@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Min spilside</title>
+	<style>
+		body {
+			background-color: #f3f3f3;
+			font-family: Arial, sans-serif;
+		}
+		.button {
+			display: block;
+			margin: 0 auto;
+			width: 200px;
+			height: 200px;
+			border-radius: 100px;
+			background-color: green;
+			color: white;
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			line-height: 200px;
+			text-decoration: none;
+		}
+		.button:hover {
+			background-color: #00cc00;
+		}
+		#start-text {
+			text-align: center;
+			font-size: 36px;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="start-text">Start spil</div>
+	<a href="#" class="button" onclick="playMusic()">Start</a>
+	<audio id="keySound">
+		<source src="key_sound.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="music">
+		<source src="music.mp3" type="audio/mpeg">
+	</audio>
+	<script>
+		function playSound() {
+			document.getElementById("keySound").play();
+		}
+		function playMusic() {
+			document.getElementById("music").play();
+			var keys = document.querySelectorAll(".key");
+			keys.forEach(function(key) {
+				key.addEventListener("mousedown", function() {
+					playSound();
+				});
+			});
+		}
+	</script>
+	<div id="keyboard">
+		<div class="row">
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+		</div>
+		<div class="row">
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+		</div>
+		<div class="row">
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+			<div class="key"></div>
+		</div>
+		<div class="row">
+		
