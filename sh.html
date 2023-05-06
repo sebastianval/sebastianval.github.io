@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Big HTML Game</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<h1>My Big HTML Game</h1>
+	</header>
+	<main>
+		<section id="instructions">
+			<h2>Instructions</h2>
+			<p>Use the arrow keys to move the character and collect all the coins. Avoid the enemies or you'll lose a life. Collect the power-ups to gain extra abilities. Reach the end of the level to advance to the next level.</p>
+			<button id="start-button">Start Game</button>
+		</section>
+		<section id="gameplay" class="hidden">
+			<div id="game-area">
+				<div id="character"></div>
+				<div id="coin1" class="coin"></div>
+				<div id="coin2" class="coin"></div>
+				<div id="coin3" class="coin"></div>
+				<div id="enemy1" class="enemy"></div>
+				<div id="enemy2" class="enemy"></div>
+				<div id="power-up1" class="power-up"></div>
+				<div id="power-up2" class="power-up"></div>
+				<div id="end-zone"></div>
+			</div>
+			<div id="game-info">
+				<p>Lives: <span id="lives">3</span></p>
+				<p>Score: <span id="score">0</span></p>
+			</div>
+			<button id="reset-button">Reset Game</button>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2023 My Company. All Rights Reserved.</p>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+</html>
